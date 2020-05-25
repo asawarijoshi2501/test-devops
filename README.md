@@ -1,37 +1,58 @@
-## Welcome to GitHub Pages
+# Docsy Example
 
-You can use the [editor on GitHub](https://github.com/asawarijoshi2501/test-devops/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+[Docsy](https://github.com/google/docsy) is a Hugo theme for technical documentation sites, providing easy site navigation, structure, and more. This **Docsy Example Project** uses the Docsy theme, as well as providing a skeleton documentation structure for you to use. You can either copy this project and edit it with your own content, or use the theme in your projects like any other [Hugo theme](https://gohugo.io/themes/installing-and-using-themes/).
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+This Docsy Example Project is hosted at [https://example.docsy.dev/](https://example.docsy.dev/).
 
-### Markdown
+You can find detailed theme instructions in the Docsy user guide: https://docsy.dev/docs/
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+This is not an officially supported Google product. This project is currently maintained.
 
-```markdown
-Syntax highlighted code block
+## Cloning the Docsy Example Project
 
-# Header 1
-## Header 2
-### Header 3
+The following will give you a project that is set up and ready to use (don't forget to use `--recurse-submodules` or you won't pull down some of the code you need to generate a working site). The `hugo server` command builds and serves the site. If you just want to build the site, run `hugo` instead.
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```bash
+git clone --recurse-submodules --depth 1 https://github.com/google/docsy-example.git
+cd docsy-example
+hugo server
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+The theme is included as a Git submodule:
 
-### Jekyll Themes
+```bash
+▶ git submodule
+ a053131a4ebf6a59e4e8834a42368e248d98c01d themes/docsy (heads/master)
+```
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/asawarijoshi2501/test-devops/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+If you want to do SCSS edits and want to publish these, you need to install `PostCSS` (not needed for `hugo server`):
 
-### Support or Contact
+```bash
+npm install
+```
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+<!--### Cloning the Example from the Theme Project
+
+
+```bash
+git clone --recurse-submodules --depth 1 https://github.com/docsy.git
+cd tech-doc-hugo-theme/exampleSite
+HUGO_THEMESDIR="../.." hugo server
+```
+
+
+Note that the Hugo Theme Site requires the `exampleSite` to live in a subfolder of the theme itself. To avoid recursive duplication, the example site is added as a Git subtree:
+
+```bash
+git subtree add --prefix exampleSite https://github.com/google/docsy.git  master --squash
+```
+
+To pull in changes, see `pull-deps.sh` script in the theme.-->
+
+## Running the website locally
+
+Once you've cloned the site repo, from the repo root folder, run:
+
+```
+hugo server
+```
